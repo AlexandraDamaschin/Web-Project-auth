@@ -22,6 +22,7 @@
   "author": "eHappy",
   "license": "ISC",
   "devDependencies": {
-    "@angular/cli": "^1.5.0"
+    "@angular/cli": "^1.5.0",
+    "nodemon": "^1.12.1"
   }
 }

@@ -34,6 +34,10 @@ app.use (express.static(path.join(__dirname, 'public')))
 //enable body parder middleware
 app.use(bodyParser.json());
 
+// Register the route
+var routes = require('./api/routes/productListRoutes');
+routes(app);
+
 //passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -45,6 +49,10 @@ app.use('/users', users);
 //index route
 app.get('/', (req, res)=>{
     res.send('text, text, text ');
+});
+
+app.use(function (req, res) {
+    res.status(404).send({ url: req.originalUrl + ' not found' })
 });
 
 //start server
